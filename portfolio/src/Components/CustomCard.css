@@ -1,0 +1,19 @@
+.card img {
+    height: 100%;
+    width: 100%;
+}
+
+.card {
+    margin-top: 30px;
+    height: 180px;
+    width: 400px;
+}
+
+.modal-time{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-image img{
+    width: 1000px;
+}
