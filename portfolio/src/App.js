@@ -1,5 +1,4 @@
-import { Box , Tab, createTheme, ThemeProvider } from '@mui/material'
-import { TabContext, TabList, TabPanel } from '@mui/lab'
+import { Box , Tab, Tabs, createTheme, ThemeProvider } from '@mui/material'
 import { useState } from 'react'
 import './App.css'
 
@@ -16,7 +15,7 @@ const darkTheme = createTheme({
 
   
 function App() {
-    const [value, setValue] = useState('1');
+    const [value, setValue] = useState(0);
 
     const handleChange = (event, newValue) => {
       setValue(newValue);
@@ -24,21 +23,30 @@ function App() {
     return (
         <ThemeProvider theme={darkTheme}>
         <Box sx={{ marginLeft: '20%', marginRight: '20%'}}>
-      <TabContext value={value}>
-          <TabList onChange={handleChange} centered >
-            <Tab label="Home" value="1" />
-            <Tab label="Portfolio" value="2" />
-            <Tab label="Tableau Récapitulatif" value="3" />
-            <Tab label="Curriculum vitæ" value="4" />
-          </TabList>
-            <TabPanel value="1"><Home /></TabPanel>
-            <TabPanel value="2"><Exhibition /></TabPanel>
-            <TabPanel value="3"><TabPortfolio /></TabPanel>
-            <TabPanel value="4"><CV /></TabPanel>
-      </TabContext>
+          <Tabs onChange={handleChange} value={value} centered >
+            <Tab label="Home" />
+            <Tab label="Portfolio"  />
+            <Tab label="Tableau Récapitulatif"  />
+            <Tab label="Curriculum vitæ" />
+          </Tabs>
+            <TabPanel value={value} index={0}><Home /></TabPanel>
+            <TabPanel value={value} index={1}><Exhibition /></TabPanel>
+            <TabPanel value={value} index={2}><TabPortfolio /></TabPanel>
+            <TabPanel value={value} index={3}><CV /></TabPanel>
     </Box>
     </ThemeProvider>
     )
 }
 
+function TabPanel({ children, value, index }) {
+    return (
+      <div role="tabpanel" hidden={value !== index}>
+        {value === index && (
+          <Box p={3}>
+            {children}
+          </Box>
+        )}
+      </div>
+    );
+  }
 export default App

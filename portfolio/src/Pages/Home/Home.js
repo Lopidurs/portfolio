@@ -10,7 +10,7 @@ export default function Home() {
             <h2>Points forts :</h2>
             <div>Je suis quelqu'un de très curieux et de très motivé. J'aime apprendre de nouvelles choses et je suis très motivé pour atteindre mes objectifs. Je suis également quelqu'un de très sociable et d'ouvert d'esprit. J'aime travailler en équipe et je suis toujours prêt à aider les autres.</div>
             <h2>Points faible :</h2>
-            <div>J'ai tendance à être vite frustré quand quelque chose ne fonctionne pas comme je veux se qui conduit à un énervement puis un abandon.</div>
+            <div>J'ai tendance à être vite frustré quand quelque chose ne fonctionne pas comme je veux, ce qui conduit souvent à un énervement puis un abandon.</div>
         </div>
     )
 }
